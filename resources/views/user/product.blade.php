@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="content-product-left class-honizol col-md-6 col-sm-12 col-xs-12 ">
                             <div class="large-image  ">
-                                <img itemprop="image" class="product-image-zoom" src="{{asset('user/img/demo/cms/image3.jpg')}}" data-zoom-image="{{asset('user/img/demo/cms/image3.jpg')}}" title="Deep Black Kheri" alt="Deep Black Kheri" width="auto" height="auto">
+                                <img itemprop="image" class="product-image-zoom" src="{{asset($product->getPicture())}}" data-zoom-image="{{asset($product->getPicture())}}" title="{{$product->name}}" alt="{{$product->name}}" width="auto" height="auto">
                             </div>
                             <div id="thumb-slider" class="owl-theme owl-loaded owl-drag full_slider owl-carousel " data-nav='yes' data-loop="yes" data-margin="10" data-items_xs="2" data-items_sm="3" data-items_md="4" >
                                 <a data-index="0" class="img thumbnail " data-image="img/demo/cms/image3.jpg')}}'" title="Kohati Soft">
@@ -40,7 +40,7 @@
 
                         <div class="content-product-right col-md-6 col-sm-12 col-xs-12">
                             <div class="title-product">
-                                <h1>Deep Black Kheri</h1>
+                                <h1>{{$product->name}}</h1>
                             </div>
                             <!-- Review -->
                             <div class="box-review form-group">
@@ -57,37 +57,31 @@
                             </div>
                             <div class="product-box-desc">
                                 <ul>
-                                    <li>Hand Stitched Shoes</li>
-                                    <li>Made with Water Resistent Thread</li>
-                                    <li>Leather Material</li>
-
-                                    <li>Sizes From 6-12 Available</li>
-
-
+                                    <li>{{$product->description}}</li>
                                 </ul>
                             </div>
                             <div class="product-label form-group">
                                 <div class="stock">
-                                    <span>Availability:</span> <span class="instock">In Stock</span>
-                                    <p>SKU: 117262351_PK-1269756578</p>
+                                    <span>Availability:</span>
+                                    @if($product->availability === 1)
+                                        <span class="instock">In Stock</span>
+                                        @else
+                                        <span class="outstock">Out Of Stock</span>
+                                        @endif
+
+                                    <p></p>
                                 </div>
                                 <div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="http://data-vocabulary.org/Offer">
-                                    <span class="price-new" itemprop="price">RS 2800.00</span>
-                                    <span class="price-old" itemprop="price">RS 3000.00</span>
-
+                                    <span class="price-new" itemprop="price">RS {{$product->price}}</span>
+{{--                                    <span class="price-old" itemprop="price">RS 3000.00</span>--}}
                                 </div>
-
                             </div>
-
-
-
-
                             <div id="product">
                                 <div class="form-group box-info-product">
                                     <div class="option quantity">
                                         <div class="input-group quantity-control" unselectable="on" style="-webkit-user-select: none;">
                                             <label>Qty:  </label>
-                                            <input class="form-control" type="text" name="quantity" value="1">
+                                            <input class="form-control" type="text" name="quantity" value="{{$product->quantity}}">
                                             <input type="hidden" name="product_id" value="50">
                                             <span class="input-group-addon product_quantity_down"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             <span class="input-group-addon product_quantity_up"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
@@ -95,7 +89,7 @@
                                         </div>
                                         <div class="input-group quantity-control" unselectable="on" style="-webkit-user-select: none;">
                                             <label>Size:  </label>
-                                            <input class="form-control" type="text" name="Size" value="6">
+                                            <input class="form-control" type="text" name="Size" value="{{$product->size}}">
                                             <input type="hidden" name="product_id" value="12">
                                             <span class="input-group-addon product_quantity_down"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                                             <span class="input-group-addon product_quantity_up"><i class="fa fa-angle-up" aria-hidden="true"></i></span>

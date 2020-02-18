@@ -108,223 +108,50 @@
                     <hr>
                     <div class="digital-owl">
                         <div class=" owl-carousel digital-owl " data-dots="no" data-nav="yes" data-loop="yes" data-items_xs="1" data-items_sm="2" data-items_md="4" data-margin="20">
-                            <div class="product-layout">
-                                <div class="product-item-container">
-                                    <div class="left-block">
-                                        <div class="product-image-container  second_img ">
-                                            <a href="{{route('product')}}" class="product-img"><img src="{{asset('user/img/demo/cms/i11.jpg')}}" alt=""></a>
-                                            <!--Sale Label-->
-                                            <span class="new">New</span>
 
-                                            <div class="hover">
-                                                <ul>
-                                                    <li class="icon-heart"><a class="wishlist"   data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></a></li>
+                            @foreach($products as $item)
+                                <div class="product-layout">
+                                    <div class="product-item-container">
+                                        <div class="left-block">
+                                            <div class="product-image-container  second_img ">
+                                                <a href="{{ url("product/$item->id") }}"
+                                                   class="product-img"><img src="{{url($item->getPicture())}}" alt=""></a>
+                                                <span class="new">New</span>
+                                                <div class="hover">
+                                                    <ul>
+                                                        <li class="icon-heart"><a class="wishlist"   data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></a></li>
 
-                                                </ul>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-block">
+                                            <div class="caption">
+                                                <h4><a href="{{route('product')}}">{{$item->name}}</a></h4>
+                                                <div class="ratings">
+                                                    <div class="rating-box">
+                                                        <span class=""><i class="fa fa-star "></i></span>
+                                                        <span class=""><i class="fa fa-star "></i></span>
+                                                        <span class=""><i class="fa fa-star "></i></span>
+                                                        <span class=""><i class="fa fa-star "></i></span>
+                                                        <span class="gray"><i class="fa fa-star "></i></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="price">
+                                                    <span class="price-new">{{$item->price}}</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="button-group">
+                                                <button class="addToCart btn btn-default "   data-toggle="tooltip" title="" onclick="cart.add('42', '1');" data-original-title="Add to Cart"> <span class="">Add to Cart</span></button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="right-block">
-                                        <div class="caption">
-                                            <h4><a href="{{route('product')}}">Product #01</a></h4>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class="gray"><i class="fa fa-star "></i></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="price">
-                                                <span class="price-new">RS 4200</span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="button-group">
-                                            <button class="addToCart btn btn-default "   data-toggle="tooltip" title="" onclick="cart.add('42', '1');" data-original-title="Add to Cart"> <span class="">Add to Cart</span></button>
-                                        </div>
-                                    </div><!-- right block -->
                                 </div>
-                            </div>
-
-
-                            <div class="product-layout">
-                                <div class="product-item-container">
-                                    <div class="left-block">
-                                        <div class="product-image-container  second_img ">
-                                            <a href="{{route('product')}}" class="product-img"><img src="{{asset('user/img/demo/cms/image2.jpg')}}" alt=""></a>
-                                            <!--Sale Label-->
-                                            <span class="new">New</span>
-
-                                            <div class="hover">
-                                                <ul>
-                                                    <li class="icon-heart"><a class="wishlist"   data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="right-block">
-                                        <div class="caption">
-                                            <h4><a href="{{route('product')}}">Product#02</a></h4>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class="gray"><i class="fa fa-star "></i></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="price">
-                                                <span class="price-new">RS 1300</span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="button-group">
-                                            <button class="addToCart btn btn-default "   data-toggle="tooltip" title="" onclick="cart.add('42', '1');" data-original-title="Add to Cart"> <span class="">Add to Cart</span></button>
-                                        </div>
-                                    </div><!-- right block -->
-                                </div>
-                            </div>
-
-
-                            <div class="product-layout">
-                                <div class="product-item-container">
-                                    <div class="left-block">
-                                        <div class="product-image-container  second_img ">
-                                            <a href="{{route('product')}}" class="product-img"><img src="{{asset('user/img/demo/cms/i44.jpg')}}" alt="" width="120" height="120"></a>
-                                            <!--Sale Label-->
-                                            <span class="new">New</span>
-
-                                            <div class="hover">
-                                                <ul>
-                                                    <li class="icon-heart"><a class="wishlist"   data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="right-block">
-                                        <div class="caption">
-                                            <h4><a href="{{route('product')}}">Product #03</a></h4>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class="gray"><i class="fa fa-star "></i></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="price">
-                                                <span class="price-new">RS 1900</span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="button-group">
-                                            <button class="addToCart btn btn-default "   data-toggle="tooltip" title="" onclick="cart.add('42', '1');" data-original-title="Add to Cart"> <span class="">Add to Cart</span></button>
-                                        </div>
-                                    </div><!-- right block -->
-                                </div>
-                            </div>
-
-
-                            <div class="product-layout">
-                                <div class="product-item-container">
-                                    <div class="left-block">
-                                        <div class="product-image-container  second_img ">
-                                            <a href="{{route('product')}}" class="product-img"><img src="{{asset('user/img/demo/cms/i5.png')}}" alt="" width="120" height="120"></a>
-                                            <!--Sale Label-->
-
-                                            <div class="hover">
-                                                <ul>
-                                                    <li class="icon-heart"><a class="wishlist"   data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="right-block">
-                                        <div class="caption">
-                                            <h4><a href="{{route('product')}}">Product #04</a></h4>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class="gray"><i class="fa fa-star "></i></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="price">
-                                                <span class="price-new">RS 1400</span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="button-group">
-                                            <button class="addToCart btn btn-default "   data-toggle="tooltip" title="" onclick="cart.add('42', '1');" data-original-title="Add to Cart"> <span class="">Add to Cart</span></button>
-                                        </div>
-                                    </div><!-- right block -->
-                                </div>
-                            </div>
-
-                            <div class="product-layout">
-                                <div class="product-item-container">
-                                    <div class="left-block">
-                                        <div class="product-image-container  second_img ">
-                                            <a href="{{route('product')}}" class="product-img"><img src="{{asset('user/img/demo/cms/i6.png')}}" alt="" width="120" height="120"></a>
-                                            <!--Sale Label-->
-
-                                            <div class="hover">
-                                                <ul>
-                                                    <li class="icon-heart"><a class="wishlist"   data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="right-block">
-                                        <div class="caption">
-                                            <h4><a href="{{route('product')}}">Product #06</a></h4>
-                                            <div class="ratings">
-                                                <div class="rating-box">
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class=""><i class="fa fa-star "></i></span>
-                                                    <span class="gray"><i class="fa fa-star "></i></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="price">
-                                                <span class="price-new">RS 1900</span>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="button-group">
-                                            <button class="addToCart btn btn-default "   data-toggle="tooltip" title="" onclick="cart.add('42', '1');" data-original-title="Add to Cart"> <span class="">Add to Cart</span></button>
-                                        </div>
-                                    </div><!-- right block -->
-                                </div>
-                            </div>
-
-
+                            @endforeach
 
                         </div>
                     </div>

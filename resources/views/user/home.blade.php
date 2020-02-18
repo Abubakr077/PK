@@ -14,21 +14,10 @@
 
             @include('layouts.home.content')
         </div>
-    <!-- //Main Container -->
-
-    <script type="text/javascript">
-        <!--
-        var $typeheader = 'header-home2';
-        //-->
-    </script>
-
-    <!-- Footer Container -->
     @include('layouts.footer')
     @include('layouts.footer-bottom')
 
 </div>
-</div>
-
 
 
 

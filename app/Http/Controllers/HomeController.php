@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +23,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.home');
+        $products = Product::all();
+        return view('user.home', compact('products'));
+    }
+
+    /**
+     * Show the product that has been clicked
+     *
+     */
+    public function showProduct(Request $request)
+    {
+        $product = Product::find($request->route('product_id'));
+        return view('user.product', compact('product'));
     }
 }

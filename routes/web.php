@@ -48,20 +48,17 @@ Route::get('order-information', function () {
     return view('user/order-information');
 })->name('order-information');
 
-Route::get('product', function () {
-    return view('user/product');
-})->name('product');
-
 Route::get('wishlist', function () {
     return view('user/wishlist');
 })->name('wishlist');
 
+Route::get('/product/{product_id?}', 'HomeController@showProduct')->name('product');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
-    return view('user/home');
+    return redirect('/home');
 })->name('/');
 Route::get('home2', function () {
-    return view('user/home');
+    return redirect('/home');
 })->name('home2');
 
 
