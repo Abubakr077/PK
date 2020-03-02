@@ -89,11 +89,13 @@
                             <li>
                                 <table class="table table-striped">
                                     <tbody>
+                                    @isset($cart)
+                                    @foreach($cart as $item)
                                     <tr>
                                         <td class="text-center" style="width:70px">
-                                            <a href="{{route('product')}}"> <img src="{{asset('user/img/demo/cms/image2.jpg')}}" style="width:70px" alt="Kohati SMile" title="Kohati Smile" class="preview"> </a>  -->
+                                            <a href="{{route('product')}}"> <img src="{{asset('user/img/demo/cms/image2.jpg')}}" style="width:70px" alt="Kohati SMile" title="Kohati Smile" class="preview"> </a>
                                         </td>
-                                        <td class="text-left"> <a class="cart_product_name" href="{{route('product')}}">Kohati Smile</a> </td>
+                                        <td class="text-left"> <a class="cart_product_name" href="{{route('product')}}">{{$item->name}}</a> </td>
                                         <td class="text-center"> x1 </td>
                                         <td class="text-center"> RS 2500.00 </td>
                                         <td class="text-right">
@@ -103,20 +105,8 @@
                                             <a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center" style="width:70px">
-                                            <a href="{{route('product')}}"> <img src="{{asset('user/img/demo/cms/i11.jpg')}}" style="width:70px" alt="Kheri" title="Brown Kheri" class="preview"> </a>
-                                        </td>
-                                        <td class="text-left"> <a class="cart_product_name" href="{{route('product')}}">Brown Kheri</a> </td>
-                                        <td class="text-center"> x1 </td>
-                                        <td class="text-center"> RS 3000.00 </td>
-                                        <td class="text-right">
-                                            <a href="{{route('product')}}" class="fa fa-edit"></a>
-                                        </td>
-                                        <td class="text-right">
-                                            <a onclick="cart.remove('1');" class="fa fa-times fa-delete"></a>
-                                        </td>
-                                    </tr>
+                                        @endforeach
+                                    @endisset
                                     </tbody>
                                 </table>
                             </li>

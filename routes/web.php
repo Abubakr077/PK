@@ -53,6 +53,9 @@ Route::get('wishlist', function () {
 })->name('wishlist');
 
 Route::get('/product/{product_id?}', 'HomeController@showProduct')->name('product');
+
+Route::post('/addtocart', 'CartController@store')->name('addtocart');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return redirect('/home');

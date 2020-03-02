@@ -13,7 +13,9 @@
 
             <div class="product-view row">
                 <div class="left-content-product col-lg-9 col-xs-12">
-                    <div class="row">
+                    <form method="POST" action="/addtocart">
+                        @csrf
+                        <div class="row">
                         <div class="content-product-left class-honizol col-md-6 col-sm-12 col-xs-12 ">
                             <div class="large-image  ">
                                 <img itemprop="image" class="product-image-zoom" src="{{asset($product->getPicture())}}" data-zoom-image="{{asset($product->getPicture())}}" title="{{$product->name}}" alt="{{$product->name}}" width="auto" height="auto">
@@ -99,7 +101,8 @@
                                     </div>
                                     <div class="info-product-right">
                                         <div class="cart">
-                                            <input type="button" data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" onclick="cart.add('42', '1');" data-original-title="Add to Cart">
+                                                <button type="submit" data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..."
+                                                        id="button-cart" class="btn btn-mega btn-lg" onclick="cart.add('42', '1');" data-original-title="Add to Cart" >Add to Cart</button>
                                         </div>
                                         <div class="add-to-links wish_comp">
                                             <ul class="blank list-inline">
@@ -107,7 +110,6 @@
                                                     <a class="icon" data-toggle="tooltip" title="" onclick="wishlist.add('50');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i>
                                                     </a>
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </div>
@@ -131,6 +133,7 @@
 
                         </div>
                     </div>
+    </form>
                     <div class="row">
                         <div class="col-sx-12">
                             <div class="producttab ">
@@ -173,10 +176,10 @@
                                                 <h2 id="review-title">Write a review</h2>
                                                 <div class="contacts-form">
                                                     <div class="form-group"> <span class="icon icon-user"></span>
-                                                        <input type="text" name="name" class="form-control" value="Your Name" onblur="if (this.value == '') {this.value = 'Your Name';}" onfocus="if(this.value == 'Your Name') {this.value = '';}">
+                                                        <input type="text" name="name" class="form-control" value="Your Name" onblur="if (this.value === '') {this.value = 'Your Name';}" onfocus="if(this.value == 'Your Name') {this.value = '';}">
                                                     </div>
                                                     <div class="form-group"> <span class="icon icon-bubbles-2"></span>
-                                                        <textarea class="form-control" name="text" onblur="if (this.value == '') {this.value = 'Your Review';}" onfocus="if(this.value == 'Your Review') {this.value = '';}">Your Review</textarea>
+                                                        <textarea class="form-control" name="text" onblur="if (this.value === '') {this.value = 'Your Review';}" onfocus="if(this.value == 'Your Review') {this.value = '';}">Your Review</textarea>
                                                     </div>
 
 
